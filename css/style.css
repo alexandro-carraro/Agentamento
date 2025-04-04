@@ -1,0 +1,206 @@
+/* Reset Geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f8f8f8;
+    padding: 20px;
+}
+
+/* Container Principal */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #333;
+}
+
+/* Campos do Formulário */
+form input, form button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+}
+
+form input:disabled {
+    background-color: #f0f0f0;
+    cursor: not-allowed;
+}
+
+/* Botão Principal */
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+    border-radius: 6px;
+}
+
+button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Input e Botão do CEP */
+.cep-container {
+    display: flex;
+    align-items: center;
+}
+
+.lupa {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.lupa:hover {
+    color: #218838;
+}
+
+/* Data Agendamento */
+.data-container {
+    display: flex;
+    align-items: center;
+}
+
+#calendario-icon {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin-left: 10px;
+}
+
+#calendario-icon:hover {
+    transform: scale(1.2);
+    color: #218838;
+}
+
+/* Modal de Alerta */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Caixa do Modal */
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: popUp 0.3s ease-in-out forwards;
+}
+
+/* Mensagem do Modal */
+.modal-content p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Botão do Modal */
+.modal-content button {
+    padding: 12px 20px;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.modal-content button:hover {
+    background-color: #218838;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    to {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+}
+
+@keyframes popUp {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Estilização do Calendário */
+#calendar {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Campo de Seleção de Data */
+#calendar-date {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    border: 2px solid #218838;
+    border-radius: 8px;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+}
+
+#calendar-date:focus {
+    border-color: #28a745;
+}

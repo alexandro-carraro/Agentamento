@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Coleta de Entulho</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Agendamento de Coleta de Entulho</h1>
+        
+        <form id="form-agendamento" method="POST" action="php/agendamento.php">
+            <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+            <input type="tel" id="celular" name="celular" placeholder="Seu celular" required>
+            
+            <div class="cep-container">
+                <input type="text" id="cep" name="cep" placeholder="CEP" required>
+                <button type="button" id="buscar-endereco" class="lupa">🔍</button>
+            </div>
+            
+            <input type="text" id="rua" name="rua" placeholder="Rua" required readonly>
+            <input type="text" id="bairro" name="bairro" placeholder="Bairro" required readonly>
+            <input type="number" id="numero_logradouro" name="numero_logradouro" placeholder="Número do logradouro" required>
+            
+            <div class="data-container">
+                <input type="text" id="data_agendamento" name="data_agendamento" placeholder="Selecione a data" readonly required>
+                <button type="button" id="calendario-icon">📅</button>
+            </div>
+            
+            <button type="submit" id="confirmar">Confirmar Agendamento</button>
+        </form>
+        
+        <div id="alert" class="alert"></div>
+    </div>
+
+    <div id="calendar" class="calendar">
+        <input type="date" id="calendar-date" name="calendar-date" required>
+    </div>
+    
+    <div id="alert-modal" class="modal">
+        <div class="modal-content">
+            <p id="alert-message"></p>
+            <button onclick="closeAlert()">OK</button>
+        </div>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
